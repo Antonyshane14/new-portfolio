@@ -114,13 +114,13 @@ function init() {
   ───────────────────────────────────────────────────── */
   const wordEl = $('#word-swap');
   const words  = [
-    'break systems.',
-    'secure organizations.',
-    'automate exploits.',
-    'train red teams.',
-    'ship AI products.',
-    'defend at scale.',
-    'think like attackers.',
+    'advance security research.',
+    'scale cybersecurity ventures.',
+    'secure critical systems.',
+    'lead offensive engagements.',
+    'build workforce-ready talent.',
+    'publish impactful research.',
+    'defend with attacker insight.',
   ];
   let wordIndex = 0;
 
