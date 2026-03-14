@@ -120,9 +120,11 @@
        ① HERO
   ─────────────────────────────────────────────────── -->
   <section id="hero" aria-label="Introduction">
-    <div class="hero-inner">
+    <!-- Interactive canvas background -->
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
 
-      <div class="hero-left">
+    <div class="hero-inner">
+      <div class="hero-content">
         <p class="hero-eyebrow">
           <span class="eyebrow-dot" aria-hidden="true"></span>
           Offensive Security &nbsp;·&nbsp; Entrepreneurship &nbsp;·&nbsp; Artificial Intelligence
@@ -165,23 +167,6 @@
           </div>
         </div>
       </div>
-
-      <div class="hero-right" aria-hidden="true">
-        <div class="profile-frame">
-          <!--
-            TODO: replace with real image ↓
-            <img src="assets/profile.jpg" alt="Antony Shane" />
-          -->
-          <div class="photo-placeholder">
-            <span class="ph-label">[ profile photo ]</span>
-            <span class="ph-sub">antonyshane.jpg</span>
-            <div class="scan-line"></div>
-          </div>
-          <div class="frame-corner" aria-hidden="true"></div>
-        </div>
-        <p class="hero-caption">B.Tech · NIT Rourkela · 2027</p>
-      </div>
-
     </div>
 
     <div class="scroll-hint" aria-hidden="true">
@@ -189,31 +174,6 @@
       <div class="scroll-line"></div>
     </div>
   </section>
-
-  <!-- ───────────────────────────────────────────────────
-       MARQUEE
-  ─────────────────────────────────────────────────── -->
-  <div class="marquee-band" aria-hidden="true">
-    <div class="marquee-track">
-      <span class="m-item">Offensive Security <em>✦</em></span>
-      <span class="m-item">Red Teaming <em>✦</em></span>
-      <span class="m-item">AI / ML Engineering <em>✦</em></span>
-      <span class="m-item">Malware Research <em>✦</em></span>
-      <span class="m-item">Entrepreneurship <em>✦</em></span>
-      <span class="m-item">Digital Forensics <em>✦</em></span>
-      <span class="m-item">Vulnerability Research <em>✦</em></span>
-      <span class="m-item">Penetration Testing <em>✦</em></span>
-      <!-- Duplicate set for seamless CSS loop -->
-      <span class="m-item">Offensive Security <em>✦</em></span>
-      <span class="m-item">Red Teaming <em>✦</em></span>
-      <span class="m-item">AI / ML Engineering <em>✦</em></span>
-      <span class="m-item">Malware Research <em>✦</em></span>
-      <span class="m-item">Entrepreneurship <em>✦</em></span>
-      <span class="m-item">Digital Forensics <em>✦</em></span>
-      <span class="m-item">Vulnerability Research <em>✦</em></span>
-      <span class="m-item">Penetration Testing <em>✦</em></span>
-    </div>
-  </div>
 
   <!-- ───────────────────────────────────────────────────
        ② ABOUT

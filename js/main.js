@@ -35,7 +35,168 @@ window.addEventListener('load', init);
 function init() {
 
   /* ─────────────────────────────────────────────────────
-     1. CUSTOM CURSOR — disabled, using default browser cursor
+     1. PARTICLE CANVAS
+  ───────────────────────────────────────────────────── */
+  const canvas = $('#particle-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    const heroSection = $('#hero');
+
+    // Set canvas size
+    function resizeCanvas() {
+      canvas.width = heroSection.offsetWidth;
+      canvas.height = heroSection.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Particle system
+    const particles = [];
+    const particleCount = 100;
+    const accentColor = '#c8a96e';
+    let mouseX = null;
+    let mouseY = null;
+    const interactionRadius = 150;
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.size = Math.random() * 2 + 0.5;
+        this.baseOpacity = Math.random() * 0.5 + 0.2;
+        this.opacity = this.baseOpacity;
+        this.wobble = Math.random() * Math.PI * 2;
+        this.wobbleSpeed = Math.random() * 0.02 + 0.005;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.wobble += this.wobbleSpeed;
+
+        // Bounce off edges
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+        // Keep within bounds
+        this.x = Math.max(0, Math.min(canvas.width, this.x));
+        this.y = Math.max(0, Math.min(canvas.height, this.y));
+
+        // Breathing animation
+        this.opacity = this.baseOpacity * (0.5 + 0.5 * Math.sin(this.wobble));
+
+        // Mouse interaction — apply extra repel impulse
+        if (mouseX !== null && mouseY !== null) {
+          const dx = this.x - mouseX;
+          const dy = this.y - mouseY;
+          const distance = Math.hypot(dx, dy);
+
+          if (distance < interactionRadius && distance > 0) {
+            const angle = Math.atan2(dy, dx);
+            const repelForce = (interactionRadius - distance) / interactionRadius * 2;
+            this.vx += Math.cos(angle) * repelForce;
+            this.vy += Math.sin(angle) * repelForce;
+            this.opacity = Math.min(1, this.opacity + 0.3);
+          }
+        }
+
+        // Clamp speed: cap max, enforce min so particles never stop
+        const speed = Math.hypot(this.vx, this.vy);
+        const maxSpeed = 2;
+        const minSpeed = 0.3;
+        if (speed > maxSpeed) {
+          this.vx = (this.vx / speed) * maxSpeed;
+          this.vy = (this.vy / speed) * maxSpeed;
+        } else if (speed < minSpeed) {
+          const angle = speed > 0 ? Math.atan2(this.vy, this.vx) : Math.random() * Math.PI * 2;
+          this.vx = Math.cos(angle) * minSpeed;
+          this.vy = Math.sin(angle) * minSpeed;
+        }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = accentColor;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    // Initialize particles
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    // Draw connecting lines between nearby particles
+    function drawConnections() {
+      ctx.save();
+      ctx.strokeStyle = accentColor;
+      ctx.lineWidth = 0.5;
+
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.hypot(dx, dy);
+          const maxDistance = 150;
+
+          if (distance < maxDistance) {
+            const alpha = (1 - distance / maxDistance) * 0.3;
+            ctx.globalAlpha = alpha;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      ctx.restore();
+    }
+
+    // Animation loop
+    let lastTime = performance.now();
+    function animate(currentTime) {
+      const deltaTime = currentTime - lastTime;
+      lastTime = currentTime;
+
+      // Clear canvas
+      ctx.fillStyle = 'transparent';
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Update and draw particles
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+
+      // Draw connections
+      drawConnections();
+
+      requestAnimationFrame(animate);
+    }
+
+    // Mouse tracking for interaction
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    });
+
+    canvas.addEventListener('mouseleave', () => {
+      mouseX = null;
+      mouseY = null;
+    });
+
+    animate(lastTime);
+  }
+
+  /* ─────────────────────────────────────────────────────
+     2. CUSTOM CURSOR — disabled, using default browser cursor
   ───────────────────────────────────────────────────── */
 
   /* ─────────────────────────────────────────────────────
