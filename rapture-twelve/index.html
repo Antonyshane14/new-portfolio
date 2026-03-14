@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rapture Twelve Pvt Ltd — DPIIT Certified Cybersecurity Startup · India</title>
+  <meta name="description" content="Rapture Twelve Pvt Ltd is a DPIIT-certified cybersecurity startup founded by Antony Shane. Delivering offensive security, red teaming, VAPT, digital forensics, and AI-driven security products to national and international clients." />
+  <meta name="keywords" content="Rapture Twelve, DPIIT cybersecurity startup India, red teaming India, penetration testing India, AI cybersecurity products, offensive security services, Antony Shane startup" />
+  <meta name="author" content="Antony Shane" />
+  <link rel="canonical" href="https://antonyshane.com/rapture-twelve/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Rapture Twelve Pvt Ltd — DPIIT Certified Cybersecurity Startup" />
+  <meta property="og:description" content="Offensive security, red teaming, VAPT, digital forensics and AI-driven security products. DPIIT certified · Founded 2025 · India." />
+  <meta property="og:url"         content="https://antonyshane.com/rapture-twelve/" />
+  <meta property="og:site_name"   content="Antony Shane" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:title"       content="Rapture Twelve Pvt Ltd — Cybersecurity Startup India" />
+  <meta name="twitter:description" content="DPIIT-certified · Red Teaming · VAPT · AI Security · 11+ projects in 7 months · India" />
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Antony Shane",    "item": "https://antonyshane.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Rapture Twelve", "item": "https://antonyshane.com/rapture-twelve/" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Rapture Twelve Pvt Ltd",
+      "url": "https://antonyshane.com/rapture-twelve/",
+      "description": "DPIIT-certified cybersecurity startup providing offensive security, red teaming, VAPT, digital forensics, and AI-driven security products to national and international clients.",
+      "foundingDate": "2025",
+      "foundingLocation": "India",
+      "founder": {
+        "@type": "Person",
+        "name": "Antony Shane",
+        "url": "https://antonyshane.com"
+      },
+      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 25 },
+      "knowsAbout": [
+        "Red Teaming",
+        "Penetration Testing",
+        "Vulnerability Assessment",
+        "Digital Forensics",
+        "AI-Driven Cybersecurity",
+        "Offensive Security"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "antonyshane@rapturetwelve.com",
+        "contactType": "customer service"
+      }
+    }
+  ]
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    .page-hero {
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      top: 30%; right: 8%;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(200,169,110,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .page-hero-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      width: 100%;
+    }
+    .page-hero-name {
+      font-family: var(--fd);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.75rem;
+    }
+    .page-hero-sub {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      max-width: 580px;
+      line-height: 1.9;
+      margin-bottom: 2.25rem;
+    }
+    .breadcrumb {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 2.5rem;
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .breadcrumb a { color: var(--accent); transition: opacity 0.2s; }
+    .breadcrumb a:hover { opacity: 0.75; }
+    .breadcrumb span { opacity: 0.4; }
+
+    /* Stats band */
+    .stats-band {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 4rem;
+    }
+    .sb-item {
+      background: var(--bg-2);
+      padding: 2.25rem 2rem;
+      text-align: center;
+    }
+    .sb-num {
+      font-family: var(--fd);
+      font-size: 2.8rem;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .sb-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* Services grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--bg);
+      padding: 2.5rem;
+      transition: background var(--t-mid);
+    }
+    .service-card:hover { background: var(--bg-2); }
+    .sc-icon {
+      font-size: 1.4rem;
+      margin-bottom: 1.1rem;
+      display: block;
+    }
+    .sc-name {
+      font-family: var(--fd);
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .sc-desc {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      line-height: 1.85;
+    }
+
+    /* About block */
+    .about-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .ab-body .section-title { margin-bottom: 1.75rem; }
+    .ab-p {
+      font-size: 0.87rem;
+      color: var(--text-dim);
+      line-height: 1.9;
+      margin-bottom: 1.35rem;
+    }
+    .ab-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .ab-meta-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .ab-meta-item:first-child { border-top: 1px solid var(--border); }
+    .am-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .am-val {
+      font-family: var(--fd);
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.1em; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      .stats-band    { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .about-block   { grid-template-columns: 1fr; gap: 3rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Mobile navigation overlay -->
+  <div id="mobile-nav" aria-label="Mobile navigation" role="dialog" aria-modal="true" hidden>
+    <button class="mobile-close" id="close-mobile-nav" aria-label="Close menu">✕</button>
+    <a href="../index.html#about"         class="mobile-nav-link">About</a>
+    <a href="../index.html#experience"    class="mobile-nav-link">Experience</a>
+    <a href="../research/index.html"      class="mobile-nav-link">Research</a>
+    <a href="../rapture-twelve/index.html" class="mobile-nav-link">Rapture Twelve</a>
+    <a href="../zharnyx/index.html"       class="mobile-nav-link">Zharnyx</a>
+    <a href="../index.html#contact"       class="mobile-nav-link">Contact</a>
+  </div>
+
+  <nav id="nav" role="navigation" aria-label="Primary navigation">
+    <a href="../index.html" class="nav-logo">AS<span class="accent-dot">.</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../research/index.html">Research</a></li>
+      <li><a href="../rapture-twelve/index.html" aria-current="page" style="color:var(--text)">Rapture Twelve</a></li>
+      <li><a href="../zharnyx/index.html">Zharnyx</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:antonyshane@rapturetwelve.com" class="nav-cta">Get in touch</a>
+    <button class="nav-burger" id="mobile-nav-btn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Rapture Twelve overview">
+    <div class="page-hero-inner">
+      <p class="breadcrumb">
+        <a href="../index.html">Antony Shane</a>
+        <span>/</span>
+        <span style="color:var(--text)">Rapture Twelve</span>
+      </p>
+      <p class="hero-eyebrow">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        DPIIT Certified · Cybersecurity Startup · Founded 2025 · India
+      </p>
+      <h1 class="page-hero-name">
+        <span class="line-wrap"><span class="inner">Rapture</span></span>
+        <span class="line-wrap accent-line"><span class="inner">Twelve.</span></span>
+      </h1>
+      <p class="page-hero-sub">
+        A DPIIT-certified cybersecurity startup delivering offensive security operations,
+        AI-driven security products, and enterprise-grade threat defence to national and
+        international clients — built from the ground up in 2025.
+      </p>
+      <div class="hero-cta-row">
+        <a href="mailto:antonyshane@rapturetwelve.com" class="btn btn-primary">
+          <span class="btn-text">Engage with us</span>
+          <span class="btn-icon" aria-hidden="true">↗</span>
+          <span class="btn-fill" aria-hidden="true"></span>
+        </a>
+        <a href="../index.html" class="btn btn-ghost">
+          <span class="btn-text">← Back to portfolio</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-band" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="m-item">Red Teaming <em>✦</em></span>
+      <span class="m-item">Penetration Testing <em>✦</em></span>
+      <span class="m-item">Digital Forensics <em>✦</em></span>
+      <span class="m-item">AI Security Products <em>✦</em></span>
+      <span class="m-item">Malware Analysis <em>✦</em></span>
+      <span class="m-item">Enterprise Security <em>✦</em></span>
+      <span class="m-item">DPIIT Certified <em>✦</em></span>
+      <span class="m-item">India · Global <em>✦</em></span>
+      <span class="m-item">Red Teaming <em>✦</em></span>
+      <span class="m-item">Penetration Testing <em>✦</em></span>
+      <span class="m-item">Digital Forensics <em>✦</em></span>
+      <span class="m-item">AI Security Products <em>✦</em></span>
+      <span class="m-item">Malware Analysis <em>✦</em></span>
+      <span class="m-item">Enterprise Security <em>✦</em></span>
+      <span class="m-item">DPIIT Certified <em>✦</em></span>
+      <span class="m-item">India · Global <em>✦</em></span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section aria-label="Key metrics">
+    <div class="container">
+      <div class="stats-band">
+        <div class="sb-item fade-in">
+          <p class="sb-num"><span class="counter" data-target="11">0</span>+</p>
+          <p class="sb-label">Projects delivered</p>
+        </div>
+        <div class="sb-item fade-in">
+          <p class="sb-num"><span class="counter" data-target="25">0</span>+</p>
+          <p class="sb-label">Team members</p>
+        </div>
+        <div class="sb-item fade-in">
+          <p class="sb-num">7</p>
+          <p class="sb-label">Months to first 11 projects</p>
+        </div>
+        <div class="sb-item fade-in">
+          <p class="sb-num">2</p>
+          <p class="sb-label">Continents served</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- ABOUT -->
+  <section aria-labelledby="rt-about-title">
+    <div class="container">
+      <div class="about-block">
+
+        <div class="ab-meta fade-in">
+          <div class="ab-meta-item">
+            <span class="am-label">Founded</span>
+            <span class="am-val">2025</span>
+          </div>
+          <div class="ab-meta-item">
+            <span class="am-label">Status</span>
+            <span class="am-val">DPIIT Certified Startup</span>
+          </div>
+          <div class="ab-meta-item">
+            <span class="am-label">Headquarters</span>
+            <span class="am-val">India</span>
+          </div>
+          <div class="ab-meta-item">
+            <span class="am-label">Team size</span>
+            <span class="am-val">25+ members</span>
+          </div>
+          <div class="ab-meta-item">
+            <span class="am-label">Founder &amp; CEO</span>
+            <span class="am-val">Antony Shane</span>
+          </div>
+          <div class="ab-meta-item">
+            <span class="am-label">Focus</span>
+            <span class="am-val">Offensive Security · AI Products</span>
+          </div>
+        </div>
+
+        <div class="ab-body">
+          <h2 id="rt-about-title" class="section-title reveal-title">
+            <span class="line-wrap"><span class="inner">Built for</span></span>
+            <span class="line-wrap"><span class="inner">real threats.</span></span>
+          </h2>
+          <p class="ab-p fade-in">
+            Rapture Twelve was launched from first principles: no template, no template team.
+            Built a 25+ member cybersecurity unit from scratch — red teamers, malware engineers,
+            forensic analysts, and AI developers — and went live with 11+ national and international
+            engagements within 7 months of incorporation.
+          </p>
+          <p class="ab-p fade-in">
+            The firm's core thesis: <span class="hl">the best defence is an attacker's mindset,
+            engineered at scale.</span> Proprietary AI-driven security products are under active
+            development for global enterprise expansion, moving beyond traditional point solutions
+            to autonomous, adaptive security systems.
+          </p>
+          <p class="ab-p fade-in">
+            DPIIT recognition positions Rapture Twelve within India's national innovation ecosystem,
+            enabling structured growth, talent acquisition, and government-linked security engagements.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- SERVICES -->
+  <section aria-labelledby="services-title">
+    <div class="container">
+      <p class="section-label">What we do</p>
+      <h2 id="services-title" class="section-title reveal-title">
+        <span class="line-wrap"><span class="inner">Services &amp;</span></span>
+        <span class="line-wrap"><span class="inner">capabilities.</span></span>
+      </h2>
+
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <span class="sc-icon">⚔</span>
+          <h3 class="sc-name">Red Teaming &amp; Adversarial Simulation</h3>
+          <p class="sc-desc">Full-scope adversarial simulations emulating real threat actors. From initial access through lateral movement to impact — tested against your actual defences, not a lab environment.</p>
+        </div>
+        <div class="service-card fade-in">
+          <span class="sc-icon">◎</span>
+          <h3 class="sc-name">Vulnerability Assessment &amp; Penetration Testing</h3>
+          <p class="sc-desc">Systematic identification of exploitable weaknesses across web applications, APIs, network infrastructure, mobile, and cloud environments. From scoping to full written reporting.</p>
+        </div>
+        <div class="service-card fade-in">
+          <span class="sc-icon">⬡</span>
+          <h3 class="sc-name">AI-Driven Security Products</h3>
+          <p class="sc-desc">Proprietary autonomous security tooling: AI-powered penetration testing frameworks, adaptive threat detection systems, and LLM-assisted forensic analysis platforms in active development.</p>
+        </div>
+        <div class="service-card fade-in">
+          <span class="sc-icon">◈</span>
+          <h3 class="sc-name">Malware Research &amp; Reverse Engineering</h3>
+          <p class="sc-desc">Static and dynamic malware analysis, unpacking, C2 infrastructure mapping, and behavioural decomposition. Supports incident response and threat intelligence production.</p>
+        </div>
+        <div class="service-card fade-in">
+          <span class="sc-icon">◉</span>
+          <h3 class="sc-name">Digital Forensics &amp; Incident Response</h3>
+          <p class="sc-desc">Post-incident evidence acquisition, timeline reconstruction, attribution analysis, and remediation guidance. Covers ransomware, data exfiltration, and insider threat scenarios.</p>
+        </div>
+        <div class="service-card fade-in">
+          <span class="sc-icon">☁</span>
+          <h3 class="sc-name">Security Training &amp; Awareness</h3>
+          <p class="sc-desc">Enterprise security training seminars, hands-on workshops, and organisation-specific threat awareness programmes — delivered to industry clients across sectors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- CTA -->
+  <section aria-label="Contact Rapture Twelve">
+    <div class="container">
+      <div class="contact-inner">
+        <p class="section-label">Engage</p>
+        <h2 class="contact-headline reveal-title">
+          <span class="line-wrap"><span class="inner">Let's work</span></span>
+          <span class="line-wrap accent-line"><span class="inner"><em>together.</em></span></span>
+        </h2>
+        <p class="contact-sub fade-in">
+          Consulting engagements, red team contracts, AI security product partnerships,
+          and long-term managed security relationships. No generic proposals — only tailored work.
+        </p>
+        <div class="hero-cta-row fade-in">
+          <a href="mailto:antonyshane@rapturetwelve.com" class="btn btn-primary">
+            <span class="btn-text">antonyshane@rapturetwelve.com</span>
+            <span class="btn-icon" aria-hidden="true">↗</span>
+            <span class="btn-fill" aria-hidden="true"></span>
+          </a>
+          <a href="tel:+919790791723" class="btn btn-ghost">
+            <span class="btn-text">+91 97907 91723</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <span>© 2026 Rapture Twelve Pvt Ltd</span>
+    <span>India</span>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="../index.html">Antony Shane</a>
+      <a href="../research/index.html">Research</a>
+      <a href="../zharnyx/index.html">Zharnyx</a>
+      <a href="mailto:antonyshane@rapturetwelve.com">antonyshane@rapturetwelve.com</a>
+    </nav>
+  </footer>
+
+  <script src="../js/pages.js" defer></script>
+</body>
+</html>

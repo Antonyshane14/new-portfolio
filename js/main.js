@@ -35,41 +35,8 @@ window.addEventListener('load', init);
 function init() {
 
   /* ─────────────────────────────────────────────────────
-     1. CUSTOM CURSOR
+     1. CUSTOM CURSOR — disabled, using default browser cursor
   ───────────────────────────────────────────────────── */
-  const dot  = $('#cursor-dot');
-  const ring = $('#cursor-ring');
-
-  if (!dot || !ring) return; // touch-only device, CSS hides them
-
-  let mx = 0, my = 0;
-  let rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX;
-    my = e.clientY;
-    // Dot snaps instantly
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
-  });
-
-  // Ring follows with lerp (smooth inertia)
-  const RING_LERP = 0.1;
-
-  (function trackRing() {
-    rx += (mx - rx) * RING_LERP;
-    ry += (my - ry) * RING_LERP;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-    requestAnimationFrame(trackRing);
-  })();
-
-  // Hover state expands ring
-  const interactables = $$('a, button, .project-card, .skill-group, .exp-item, .ach-item, .tag, .sg-pills span');
-  interactables.forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('is-hovering'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('is-hovering'));
-  });
 
   /* ─────────────────────────────────────────────────────
      2. NAV
@@ -122,22 +89,25 @@ function init() {
     'publish impactful research.',
     'defend with attacker insight.',
   ];
-  let wordIndex = 0;
 
-  function swapWord() {
-    // Fade + lift out
-    wordEl.style.opacity   = '0';
-    wordEl.style.transform = 'translateY(10px)';
+  if (wordEl) {
+    let wordIndex = 0;
 
-    setTimeout(() => {
-      wordIndex = (wordIndex + 1) % words.length;
-      wordEl.textContent     = words[wordIndex];
-      wordEl.style.opacity   = '1';
-      wordEl.style.transform = 'translateY(0)';
-    }, 260);
+    function swapWord() {
+      // Fade + lift out
+      wordEl.style.opacity   = '0';
+      wordEl.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        wordIndex = (wordIndex + 1) % words.length;
+        wordEl.textContent     = words[wordIndex];
+        wordEl.style.opacity   = '1';
+        wordEl.style.transform = 'translateY(0)';
+      }, 260);
+    }
+
+    setInterval(swapWord, 3000);
   }
-
-  setInterval(swapWord, 3000);
 
   /* ─────────────────────────────────────────────────────
      4. GSAP ANIMATIONS

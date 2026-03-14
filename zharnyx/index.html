@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zharnyx Pvt Ltd — Cybersecurity EdTech · Workforce-Ready Security Training · India</title>
+  <meta name="description" content="Zharnyx Pvt Ltd is a cybersecurity EdTech startup co-founded by Antony Shane. Delivering hybrid practical-theoretical security training with real-world simulations — a workforce-ready alternative to traditional cybersecurity education." />
+  <meta name="keywords" content="Zharnyx, cybersecurity EdTech India, cybersecurity training platform, hands-on security education, red team training, offensive security course India, Antony Shane EdTech, Coimbatore cybersecurity" />
+  <meta name="author" content="Antony Shane" />
+  <link rel="canonical" href="https://antonyshane.com/zharnyx/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Zharnyx Pvt Ltd — Cybersecurity EdTech · India" />
+  <meta property="og:description" content="Workforce-ready cybersecurity education through real-world security simulations and adversarial labs. Co-founded by Antony Shane." />
+  <meta property="og:url"         content="https://antonyshane.com/zharnyx/" />
+  <meta property="og:site_name"   content="Antony Shane" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:title"       content="Zharnyx — Cybersecurity EdTech India" />
+  <meta name="twitter:description" content="Hands-on cybersecurity training with real-world simulations · Workforce-ready · Co-founded by Antony Shane" />
+
+  <!-- JSON-LD: Organization + EducationalOrganization -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Antony Shane", "item": "https://antonyshane.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Zharnyx",      "item": "https://antonyshane.com/zharnyx/" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "EducationalOrganization"],
+      "name": "Zharnyx Pvt Ltd",
+      "url": "https://antonyshane.com/zharnyx/",
+      "description": "Cybersecurity EdTech startup delivering hybrid practical-theoretical training with real-world security simulations — a workforce-ready alternative to traditional cybersecurity education.",
+      "foundingDate": "2026",
+      "foundingLocation": "Coimbatore, Tamil Nadu, India",
+      "founder": {
+        "@type": "Person",
+        "name": "Antony Shane",
+        "url": "https://antonyshane.com"
+      },
+      "teaches": [
+        "Offensive Security",
+        "Red Teaming",
+        "Penetration Testing",
+        "Malware Analysis",
+        "Digital Forensics",
+        "AI in Cybersecurity"
+      ],
+      "educationalCredentialAwarded": "Cybersecurity practitioner certification"
+    }
+  ]
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    .page-hero {
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      top: 30%; right: 8%;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(200,169,110,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .page-hero-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      width: 100%;
+    }
+    .page-hero-name {
+      font-family: var(--fd);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.75rem;
+    }
+    .page-hero-sub {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      max-width: 580px;
+      line-height: 1.9;
+      margin-bottom: 2.25rem;
+    }
+    .breadcrumb {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 2.5rem;
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .breadcrumb a { color: var(--accent); transition: opacity 0.2s; }
+    .breadcrumb a:hover { opacity: 0.75; }
+    .breadcrumb span { opacity: 0.4; }
+
+    /* Pillars */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 3rem;
+    }
+    .pillar-card {
+      background: var(--bg);
+      padding: 2.5rem;
+      transition: background var(--t-mid);
+    }
+    .pillar-card:hover { background: var(--bg-2); }
+    .pc-num {
+      font-family: var(--fd);
+      font-size: 2.5rem;
+      color: var(--accent);
+      opacity: 0.25;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .pc-title {
+      font-family: var(--fd);
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+    }
+    .pc-desc {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      line-height: 1.85;
+    }
+
+    /* Why block */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .wg-body .section-title { margin-bottom: 1.75rem; }
+    .wg-p {
+      font-size: 0.87rem;
+      color: var(--text-dim);
+      line-height: 1.9;
+      margin-bottom: 1.35rem;
+    }
+    .wg-list {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .wg-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .wg-item:first-child { border-top: 1px solid var(--border); }
+    .wi-icon {
+      font-size: 0.85rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      padding-top: 0.1rem;
+    }
+    .wi-text h4 {
+      font-family: var(--fd);
+      font-size: 0.9rem;
+      font-weight: 400;
+      margin-bottom: 0.2rem;
+    }
+    .wi-text p {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    /* Curriculum */
+    .curriculum-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 3rem;
+    }
+    .cl-item {
+      background: var(--bg-2);
+      padding: 1.75rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      transition: background var(--t-mid);
+    }
+    .cl-item:hover { background: var(--bg-3); }
+    .cl-name {
+      font-family: var(--fd);
+      font-size: 0.95rem;
+    }
+    .cl-tag {
+      font-size: 0.57rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border: 1px solid var(--accent-line);
+      color: var(--accent);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.1em; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      .pillars-grid    { grid-template-columns: 1fr; }
+      .why-grid        { grid-template-columns: 1fr; gap: 3rem; }
+      .curriculum-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Mobile navigation overlay -->
+  <div id="mobile-nav" aria-label="Mobile navigation" role="dialog" aria-modal="true" hidden>
+    <button class="mobile-close" id="close-mobile-nav" aria-label="Close menu">✕</button>
+    <a href="../index.html#about"         class="mobile-nav-link">About</a>
+    <a href="../index.html#experience"    class="mobile-nav-link">Experience</a>
+    <a href="../research/index.html"      class="mobile-nav-link">Research</a>
+    <a href="../rapture-twelve/index.html" class="mobile-nav-link">Rapture Twelve</a>
+    <a href="../zharnyx/index.html"       class="mobile-nav-link">Zharnyx</a>
+    <a href="../index.html#contact"       class="mobile-nav-link">Contact</a>
+  </div>
+
+  <nav id="nav" role="navigation" aria-label="Primary navigation">
+    <a href="../index.html" class="nav-logo">AS<span class="accent-dot">.</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../research/index.html">Research</a></li>
+      <li><a href="../rapture-twelve/index.html">Rapture Twelve</a></li>
+      <li><a href="../zharnyx/index.html" aria-current="page" style="color:var(--text)">Zharnyx</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:antonyshane@rapturetwelve.com" class="nav-cta">Get in touch</a>
+    <button class="nav-burger" id="mobile-nav-btn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Zharnyx overview">
+    <div class="page-hero-inner">
+      <p class="breadcrumb">
+        <a href="../index.html">Antony Shane</a>
+        <span>/</span>
+        <span style="color:var(--text)">Zharnyx</span>
+      </p>
+      <p class="hero-eyebrow">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        Cybersecurity EdTech · Co-Founded 2026 · Coimbatore, India
+      </p>
+      <h1 class="page-hero-name">
+        <span class="line-wrap"><span class="inner">Zharnyx</span></span>
+        <span class="line-wrap accent-line"><span class="inner">Pvt Ltd.</span></span>
+      </h1>
+      <p class="page-hero-sub">
+        A cybersecurity EdTech platform engineered from practice, not theory.
+        Hybrid simulations, adversarial labs, and real-world mission scenarios —
+        preparing the next generation of security professionals for threats that actually exist.
+      </p>
+      <div class="hero-cta-row">
+        <a href="mailto:antonyshane@rapturetwelve.com" class="btn btn-primary">
+          <span class="btn-text">Get involved</span>
+          <span class="btn-icon" aria-hidden="true">↗</span>
+          <span class="btn-fill" aria-hidden="true"></span>
+        </a>
+        <a href="../index.html" class="btn btn-ghost">
+          <span class="btn-text">← Back to portfolio</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-band" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="m-item">Practical Security Training <em>✦</em></span>
+      <span class="m-item">Adversarial Labs <em>✦</em></span>
+      <span class="m-item">Red Team Curriculum <em>✦</em></span>
+      <span class="m-item">Workforce-Ready <em>✦</em></span>
+      <span class="m-item">Real-World Simulations <em>✦</em></span>
+      <span class="m-item">EdTech India <em>✦</em></span>
+      <span class="m-item">Coimbatore <em>✦</em></span>
+      <span class="m-item">Cybersecurity Education <em>✦</em></span>
+      <span class="m-item">Practical Security Training <em>✦</em></span>
+      <span class="m-item">Adversarial Labs <em>✦</em></span>
+      <span class="m-item">Red Team Curriculum <em>✦</em></span>
+      <span class="m-item">Workforce-Ready <em>✦</em></span>
+      <span class="m-item">Real-World Simulations <em>✦</em></span>
+      <span class="m-item">EdTech India <em>✦</em></span>
+      <span class="m-item">Coimbatore <em>✦</em></span>
+      <span class="m-item">Cybersecurity Education <em>✦</em></span>
+    </div>
+  </div>
+
+  <!-- THE PROBLEM WE SOLVE -->
+  <section aria-labelledby="why-title">
+    <div class="container">
+      <div class="why-grid">
+
+        <div class="wg-body">
+          <p class="section-label">Why Zharnyx</p>
+          <h2 id="why-title" class="section-title reveal-title">
+            <span class="line-wrap"><span class="inner">Education that</span></span>
+            <span class="line-wrap"><span class="inner">reflects reality.</span></span>
+          </h2>
+          <p class="wg-p fade-in">
+            Traditional cybersecurity courses produce graduates who know the theory but have never
+            faced a live adversary, navigated a real incident, or operated under pressure. The gap
+            between classroom and career is immense — and organisations pay for it every day.
+          </p>
+          <p class="wg-p fade-in">
+            Zharnyx was built to close that gap. Every module is grounded in attacker-grade
+            knowledge — the same methodologies used in enterprise red teams and national security
+            engagements. <span class="hl">Practitioners teaching practitioners.</span>
+          </p>
+        </div>
+
+        <div class="wg-list fade-in">
+          <div class="wg-item">
+            <span class="wi-icon">→</span>
+            <div class="wi-text">
+              <h4>Adversarial Lab Environments</h4>
+              <p>Isolated, production-realistic environments designed for hands-on attack and defence practice — not sanitised demos.</p>
+            </div>
+          </div>
+          <div class="wg-item">
+            <span class="wi-icon">→</span>
+            <div class="wi-text">
+              <h4>Hybrid Practical-Theoretical Curriculum</h4>
+              <p>Theory where it provides the foundation; practice everywhere it matters. Concepts are introduced in context, not in isolation.</p>
+            </div>
+          </div>
+          <div class="wg-item">
+            <span class="wi-icon">→</span>
+            <div class="wi-text">
+              <h4>Industry-Grade Simulations</h4>
+              <p>Real-world scenarios: ransomware response, red team engagements, phishing operations, and APT emulation built from actual incident data.</p>
+            </div>
+          </div>
+          <div class="wg-item">
+            <span class="wi-icon">→</span>
+            <div class="wi-text">
+              <h4>Workforce-Ready Outcomes</h4>
+              <p>Graduates leave with verifiable skills that map directly to enterprise and government security roles — not just a certificate.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- CURRICULUM TRACKS -->
+  <section aria-labelledby="curriculum-title">
+    <div class="container">
+      <p class="section-label">Curriculum</p>
+      <h2 id="curriculum-title" class="section-title reveal-title">
+        <span class="line-wrap"><span class="inner">Training</span></span>
+        <span class="line-wrap"><span class="inner">tracks.</span></span>
+      </h2>
+
+      <div class="curriculum-list">
+        <div class="cl-item fade-in">
+          <span class="cl-name">Offensive Security Fundamentals</span>
+          <span class="cl-tag">Core</span>
+        </div>
+        <div class="cl-item fade-in">
+          <span class="cl-name">Web Application Penetration Testing</span>
+          <span class="cl-tag">Applied</span>
+        </div>
+        <div class="cl-item fade-in">
+          <span class="cl-name">Network &amp; Infrastructure Red Teaming</span>
+          <span class="cl-tag">Advanced</span>
+        </div>
+        <div class="cl-item fade-in">
+          <span class="cl-name">Malware Analysis &amp; Reverse Engineering</span>
+          <span class="cl-tag">Specialist</span>
+        </div>
+        <div class="cl-item fade-in">
+          <span class="cl-name">Digital Forensics &amp; Incident Response</span>
+          <span class="cl-tag">Applied</span>
+        </div>
+        <div class="cl-item fade-in">
+          <span class="cl-name">AI-Augmented Attack &amp; Defence</span>
+          <span class="cl-tag">Emerging</span>
+        </div>
+        <div class="cl-item fade-in">
+          <span class="cl-name">CTF Preparation &amp; Competition Training</span>
+          <span class="cl-tag">Applied</span>
+        </div>
+        <div class="cl-item fade-in">
+          <span class="cl-name">Security Operations Centre (SOC) Analyst</span>
+          <span class="cl-tag">Core</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- PLATFORM PILLARS -->
+  <section aria-labelledby="pillars-title">
+    <div class="container">
+      <p class="section-label">Platform pillars</p>
+      <h2 id="pillars-title" class="section-title reveal-title">
+        <span class="line-wrap"><span class="inner">How it</span></span>
+        <span class="line-wrap"><span class="inner">works.</span></span>
+      </h2>
+
+      <div class="pillars-grid">
+        <div class="pillar-card fade-in">
+          <p class="pc-num">01</p>
+          <h3 class="pc-title">Lab-First Architecture</h3>
+          <p class="pc-desc">Every concept is introduced in a live lab context before any lecture. Students encounter the problem, engage with it hands-on, then receive the theoretical framework — the reverse of traditional instruction.</p>
+        </div>
+        <div class="pillar-card fade-in">
+          <p class="pc-num">02</p>
+          <h3 class="pc-title">Scenario-Based Assessment</h3>
+          <p class="pc-desc">Assessment is mission-driven. Learners complete timed, scoped security engagements — not multiple choice tests. Skills are verified by doing, with automated and expert review pipelines.</p>
+        </div>
+        <div class="pillar-card fade-in">
+          <p class="pc-num">03</p>
+          <h3 class="pc-title">Practitioner Instruction</h3>
+          <p class="pc-desc">Content is built and delivered by active practitioners — red teamers, malware researchers, and incident responders with current field experience. No recycled academic slides.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- CTA -->
+  <section aria-label="Contact Zharnyx">
+    <div class="container">
+      <div class="contact-inner">
+        <p class="section-label">Connect</p>
+        <h2 class="contact-headline reveal-title">
+          <span class="line-wrap"><span class="inner">Join the</span></span>
+          <span class="line-wrap accent-line"><span class="inner"><em>next cohort.</em></span></span>
+        </h2>
+        <p class="contact-sub fade-in">
+          Early-access cohort enrolments, institutional partnerships, and curriculum
+          collaboration enquiries are open. Reach out to discuss how Zharnyx can
+          build your organisation's or institution's security talent pipeline.
+        </p>
+        <div class="hero-cta-row fade-in">
+          <a href="mailto:antonyshane@rapturetwelve.com" class="btn btn-primary">
+            <span class="btn-text">Get in touch</span>
+            <span class="btn-icon" aria-hidden="true">↗</span>
+            <span class="btn-fill" aria-hidden="true"></span>
+          </a>
+          <a href="../rapture-twelve/index.html" class="btn btn-ghost">
+            <span class="btn-text">Rapture Twelve →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <span>© 2026 Zharnyx Pvt Ltd</span>
+    <span>Coimbatore, Tamil Nadu · India</span>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="../index.html">Antony Shane</a>
+      <a href="../research/index.html">Research</a>
+      <a href="../rapture-twelve/index.html">Rapture Twelve</a>
+      <a href="mailto:antonyshane@rapturetwelve.com">antonyshane@rapturetwelve.com</a>
+    </nav>
+  </footer>
+
+  <script src="../js/pages.js" defer></script>
+</body>
+</html>
