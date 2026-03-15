@@ -40,30 +40,32 @@ function init() {
   const canvas = $('#particle-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
-    const heroSection = $('#hero');
 
-    // Set canvas size
+    // Fill the full viewport (canvas is position:fixed)
     function resizeCanvas() {
-      canvas.width = heroSection.offsetWidth;
-      canvas.height = heroSection.offsetHeight;
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
     }
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
     // Particle system
     const particles = [];
-    const particleCount = 100;
+    const particleCount = 200;
     const accentColor = '#c8a96e';
     let mouseX = null;
     let mouseY = null;
-    const interactionRadius = 150;
+    const interactionRadius = 200;
 
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.5;
-        this.vy = (Math.random() - 0.5) * 0.5;
+        // Natural drift speed — each particle has its own, so they never fully stop
+        this.driftSpeed = Math.random() * 0.08 + 0.04;
+        const angle = Math.random() * Math.PI * 2;
+        this.vx = Math.cos(angle) * this.driftSpeed;
+        this.vy = Math.sin(angle) * this.driftSpeed;
         this.size = Math.random() * 2 + 0.5;
         this.baseOpacity = Math.random() * 0.5 + 0.2;
         this.opacity = this.baseOpacity;
@@ -77,17 +79,16 @@ function init() {
         this.wobble += this.wobbleSpeed;
 
         // Bounce off edges
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        if (this.x < 0 || this.x > canvas.width)  this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height)  this.vy *= -1;
 
-        // Keep within bounds
-        this.x = Math.max(0, Math.min(canvas.width, this.x));
+        this.x = Math.max(0, Math.min(canvas.width,  this.x));
         this.y = Math.max(0, Math.min(canvas.height, this.y));
 
         // Breathing animation
         this.opacity = this.baseOpacity * (0.5 + 0.5 * Math.sin(this.wobble));
 
-        // Mouse interaction — apply extra repel impulse
+        // Mouse interaction — clientX/Y matches fixed-position canvas
         if (mouseX !== null && mouseY !== null) {
           const dx = this.x - mouseX;
           const dy = this.y - mouseY;
@@ -95,24 +96,29 @@ function init() {
 
           if (distance < interactionRadius && distance > 0) {
             const angle = Math.atan2(dy, dx);
-            const repelForce = (interactionRadius - distance) / interactionRadius * 2;
+            const repelForce = (interactionRadius - distance) / interactionRadius * 0.8;
             this.vx += Math.cos(angle) * repelForce;
             this.vy += Math.sin(angle) * repelForce;
-            this.opacity = Math.min(1, this.opacity + 0.3);
+            this.opacity = Math.min(1, this.opacity + 0.5);
           }
         }
 
-        // Clamp speed: cap max, enforce min so particles never stop
+        // Smoothly decelerate back to each particle's own natural drift speed
         const speed = Math.hypot(this.vx, this.vy);
-        const maxSpeed = 2;
-        const minSpeed = 0.3;
-        if (speed > maxSpeed) {
-          this.vx = (this.vx / speed) * maxSpeed;
-          this.vy = (this.vy / speed) * maxSpeed;
-        } else if (speed < minSpeed) {
-          const angle = speed > 0 ? Math.atan2(this.vy, this.vx) : Math.random() * Math.PI * 2;
-          this.vx = Math.cos(angle) * minSpeed;
-          this.vy = Math.sin(angle) * minSpeed;
+        if (speed > this.driftSpeed) {
+          this.vx *= 0.93;
+          this.vy *= 0.93;
+          // Don't over-damp past drift speed
+          const newSpeed = Math.hypot(this.vx, this.vy);
+          if (newSpeed < this.driftSpeed) {
+            this.vx = (this.vx / newSpeed) * this.driftSpeed;
+            this.vy = (this.vy / newSpeed) * this.driftSpeed;
+          }
+        } else if (speed < this.driftSpeed * 0.5) {
+          // Recover if somehow nearly stopped
+          const a = speed > 0 ? Math.atan2(this.vy, this.vx) : Math.random() * Math.PI * 2;
+          this.vx = Math.cos(a) * this.driftSpeed;
+          this.vy = Math.sin(a) * this.driftSpeed;
         }
       }
 
@@ -143,7 +149,7 @@ function init() {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const distance = Math.hypot(dx, dy);
-          const maxDistance = 150;
+          const maxDistance = 120;
 
           if (distance < maxDistance) {
             const alpha = (1 - distance / maxDistance) * 0.3;
@@ -180,14 +186,14 @@ function init() {
       requestAnimationFrame(animate);
     }
 
-    // Mouse tracking for interaction
-    canvas.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
+    // Mouse tracking — document-level so it works on every scroll position
+    // clientX/Y maps directly onto the fixed canvas coordinates
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
     });
 
-    canvas.addEventListener('mouseleave', () => {
+    document.addEventListener('mouseleave', () => {
       mouseX = null;
       mouseY = null;
     });
