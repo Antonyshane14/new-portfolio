@@ -79,10 +79,6 @@
 
 <body>
 
-  <!-- Custom cursor (hidden on touch devices via CSS) -->
-  <div id="cursor-dot"  aria-hidden="true"></div>
-  <div id="cursor-ring" aria-hidden="true"></div>
-
   <!-- Mobile navigation overlay -->
   <div id="mobile-nav" aria-label="Mobile navigation" role="dialog" aria-modal="true" hidden>
     <button class="mobile-close" id="close-mobile-nav" aria-label="Close menu">✕</button>
@@ -185,12 +181,14 @@
         <div class="about-left">
           <p class="section-label" aria-hidden="true">About</p>
 
-          <!--
-            TODO: replace with real image ↓
-            <img src="assets/secondary.jpg" alt="Antony Shane, secondary" />
-          -->
-          <div class="secondary-photo" role="img" aria-label="Photo placeholder">
-            <span>[ photo ]</span>
+          <div class="secondary-photo secondary-photo--image">
+            <img
+              src="my professional pic.png?v=20260316"
+              alt="Antony Shane portrait"
+              class="secondary-photo-img"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
           <div class="edu-block">

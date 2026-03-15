@@ -4,7 +4,7 @@
  *
  * Sections
  * ────────────────────────────────────
- * 1.  Cursor — dot + inertia ring + magnetic buttons
+ * 1.  Particle canvas background
  * 2.  Nav — scroll state + mobile overlay
  * 3.  Word swap — hero typewriter
  * 4.  GSAP — hero reveal (on load) + scroll animations
@@ -200,11 +200,6 @@ function init() {
 
     animate(lastTime);
   }
-
-  /* ─────────────────────────────────────────────────────
-     2. CUSTOM CURSOR — disabled, using default browser cursor
-  ───────────────────────────────────────────────────── */
-
   /* ─────────────────────────────────────────────────────
      2. NAV
   ───────────────────────────────────────────────────── */
@@ -315,19 +310,6 @@ function init() {
       ease: 'power3.out',
       stagger: 0.1,
       delay: 0.7,
-    }
-  );
-
-  /* Hero right side (photo) */
-  gsap.fromTo(
-    '#hero .hero-right',
-    { opacity: 0, x: 30 },
-    {
-      opacity: 1,
-      x: 0,
-      duration: 1.1,
-      ease: 'expo.out',
-      delay: 0.3,
     }
   );
 
