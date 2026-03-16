@@ -96,7 +96,7 @@ function init() {
 
           if (distance < interactionRadius && distance > 0) {
             const angle = Math.atan2(dy, dx);
-            const repelForce = (interactionRadius - distance) / interactionRadius * 0.25;
+            const repelForce = (interactionRadius - distance) / interactionRadius * 0.12;
             this.vx += Math.cos(angle) * repelForce;
             this.vy += Math.sin(angle) * repelForce;
             this.opacity = Math.min(1, this.opacity + 0.3);
@@ -149,7 +149,7 @@ function init() {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const distance = Math.hypot(dx, dy);
-          const maxDistance = 100;
+          const maxDistance = 135;
 
           if (distance < maxDistance) {
             const alpha = (1 - distance / maxDistance) * 0.3;
