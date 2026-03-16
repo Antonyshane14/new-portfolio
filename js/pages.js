@@ -50,6 +50,7 @@ function initPage() {
   if (typeof gsap === 'undefined') {
     $$('.inner').forEach(el  => { el.style.transform = 'none'; });
     $$('.fade-in').forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+    $$('.timeline-item').forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
     return;
   }
 
@@ -108,4 +109,26 @@ function initPage() {
       }
     );
   });
+
+  /* Timeline (My Journey) animations */
+  const journeyItems = $$('.journey-item');
+  if (journeyItems.length > 0) {
+    gsap.fromTo(journeyItems,
+      { opacity: 0, y: 50, scale: 0.95 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.85,
+        ease: 'expo.out',
+        stagger: 0.2,
+        delay: 0.8,
+        onComplete: () => {
+          if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
+          }
+        }
+      }
+    );
+  }
 }
