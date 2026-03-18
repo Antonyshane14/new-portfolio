@@ -1483,52 +1483,23 @@ body:has(.page-hero)::after {
 
 .ach-photo-wrap {
   position: relative;
-  overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 2px;
+  overflow: hidden;
+  line-height: 0;
 }
 
 .ach-photo-img {
   width: 100%;
-  height: 420px;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
   display: block;
-  filter: brightness(0.88) contrast(1.04);
+  filter: brightness(0.9) contrast(1.03);
   transition: transform 0.8s var(--ease-expo), filter 0.5s;
 }
 
 .ach-photo-wrap:hover .ach-photo-img {
-  transform: scale(1.03);
-  filter: brightness(0.95) contrast(1.04);
-}
-
-.ach-photo-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1.25rem 1.75rem;
-  background: linear-gradient(to top, rgba(8,8,8,0.92) 0%, transparent 100%);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 1rem;
-}
-
-.ach-photo-label {
-  font-family: var(--fd);
-  font-size: 1rem;
-  color: var(--text);
-  letter-spacing: -0.01em;
-}
-
-.ach-photo-desc {
-  font-family: var(--fm);
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
+  transform: scale(1.02);
+  filter: brightness(1) contrast(1.03);
 }
 
 .ach-icon {
