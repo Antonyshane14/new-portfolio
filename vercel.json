@@ -3,7 +3,7 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "antonyshane.com" }],
       "destination": "https://www.antonyshane.com/:path*",
       "permanent": true
