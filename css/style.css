@@ -657,14 +657,14 @@ body:has(.page-hero)::before {
   z-index: -2;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 65% 55% at 95% 0%,   rgba(200,169,110,0.13) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 45% at 0%  100%,  rgba(200,169,110,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 30% at 50% 48%,   rgba(200,169,110,0.04) 0%, transparent 70%),
-    radial-gradient(ellipse 30% 25% at 20% 15%,   rgba(200,169,110,0.05) 0%, transparent 55%);
+    radial-gradient(ellipse 70% 60% at 95%  0%,   rgba(200,169,110,0.22) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 0%   100%,  rgba(200,169,110,0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 40% at 50%  50%,   rgba(200,169,110,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 35% 30% at 18%  12%,   rgba(200,169,110,0.10) 0%, transparent 55%);
   animation: bgGlowPulse 9s ease-in-out infinite;
 }
 
-/* Fine grid that fades downward */
+/* Fine grid — visible across the full page, fades at edges */
 body:has(.page-hero)::after {
   content: '';
   position: fixed;
@@ -672,16 +672,33 @@ body:has(.page-hero)::after {
   z-index: -1;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(200,169,110,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200,169,110,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(200,169,110,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,169,110,0.055) 1px, transparent 1px);
   background-size: 72px 72px;
-  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 10%, black 0%, transparent 85%);
-  mask-image:         radial-gradient(ellipse 90% 70% at 50% 10%, black 0%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 110% 100% at 50% 0%, black 30%, transparent 100%);
+  mask-image:         radial-gradient(ellipse 110% 100% at 50% 0%, black 30%, transparent 100%);
 }
 
 @keyframes bgGlowPulse {
-  0%, 100% { opacity: 1;    }
-  50%       { opacity: 0.65; }
+  0%, 100% { opacity: 1;   }
+  50%       { opacity: 0.6; }
+}
+
+/* Smooth gradient fade at the bottom of the hero into the next section */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent 0%, var(--bg) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Fade out the hard section-rule line on sub-pages */
+body:has(.page-hero) .section-rule:first-of-type {
+  border-image: linear-gradient(to right, transparent, var(--border) 30%, var(--border) 70%, transparent) 1;
+  opacity: 0.4;
 }
 
 /* ──────────────────────────────────────────────────────────
