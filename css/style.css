@@ -250,6 +250,7 @@ section { padding: 7rem 0; }
   gap: 2.25rem;
   flex-wrap: nowrap;
   flex-shrink: 1;
+  margin-left: auto;
 }
 
 /* Underline expands from centre outward — NOT left to right */
