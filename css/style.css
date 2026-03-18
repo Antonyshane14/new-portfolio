@@ -1431,7 +1431,11 @@ body:has(.page-hero)::after {
 ────────────────────────────────────────────────────────── */
 #achievements { background: var(--bg-2); }
 
-#achievements .section-title { margin-bottom: 3.5rem; }
+#achievements .section-title {
+  margin-bottom: 3.5rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  white-space: nowrap;
+}
 
 .ach-grid {
   display: grid;
@@ -1442,7 +1446,7 @@ body:has(.page-hero)::after {
 /* New achievements layout: photo+achievements top, certs bottom */
 .ach-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 42% 1fr;
   grid-template-rows: auto auto;
   gap: 3rem 4rem;
 }
@@ -1453,14 +1457,14 @@ body:has(.page-hero)::after {
 }
 
 .ach-photo-area .ach-photo-wrap {
-  height: 100%;
+  height: auto;
 }
 
 .ach-photo-area .ach-photo-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  min-height: 280px;
+  height: auto;
+  object-fit: unset;
+  display: block;
 }
 
 .ach-layout > .ach-col {
