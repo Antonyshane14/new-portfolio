@@ -1,26 +1,22 @@
 # ═══════════════════════════════════════════════════════
-#  robots.txt — antonyshane.com
+#  robots.txt — www.antonyshane.com
 #  Last updated: 2026-03-19
 # ═══════════════════════════════════════════════════════
 
-# ── Allow all well-behaved crawlers ──────────────────
+# ── Allow all crawlers full access ───────────────────
 User-agent: *
 Allow: /
-Crawl-delay: 10
 
-# ── Google — no crawl delay, full access ─────────────
+# ── Google — full access, no crawl delay ─────────────
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
 
 User-agent: Googlebot-Image
 Allow: /
-Crawl-delay: 0
 
 # ── Bing ─────────────────────────────────────────────
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 0
 
 # ── Other trusted search engines ─────────────────────
 User-agent: Slurp
@@ -35,7 +31,7 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# ── Block aggressive scrapers & spam bots ────────────
+# ── Block aggressive scrapers ────────────────────────
 User-agent: AhrefsBot
 Disallow: /
 
@@ -66,10 +62,5 @@ Disallow: /
 User-agent: Zbots
 Disallow: /
 
-# ── Disallow non-public paths ─────────────────────────
-User-agent: *
-Disallow: /css/
-Disallow: /js/
-
-# ── Sitemap location ──────────────────────────────────
+# ── Sitemap ──────────────────────────────────────────
 Sitemap: https://www.antonyshane.com/sitemap.xml
