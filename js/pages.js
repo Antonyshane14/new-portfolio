@@ -110,15 +110,11 @@ function initPage() {
     );
   });
 
-  /* Timeline (My Journey) — individual scroll reveal + hover-flash per card */
+  /* Timeline (My Journey) — individual scroll reveal per card */
   const journeyItems = $$('.journey-item');
   if (journeyItems.length > 0) {
 
     journeyItems.forEach((item) => {
-      const content = item.querySelector('.timeline-content');
-      const marker  = item.querySelector('.timeline-marker');
-
-      /* Start hidden */
       gsap.set(item, { opacity: 0, y: 55, scale: 0.96 });
 
       ScrollTrigger.create({
@@ -126,46 +122,9 @@ function initPage() {
         start: 'top 84%',
         once: true,
         onEnter: () => {
-
-          /* 1 — Slide & fade in */
           gsap.to(item, {
             opacity: 1, y: 0, scale: 1,
-            duration: 0.85, ease: 'expo.out',
-            onComplete: () => {
-
-              /* 2 — Flash hover state on content box */
-              if (content) {
-                gsap.timeline()
-                  .to(content, {
-                    y: -6,
-                    borderColor: 'var(--accent-line)',
-                    boxShadow: '0 12px 48px rgba(200,169,110,0.13)',
-                    duration: 0.32, ease: 'power2.out'
-                  })
-                  .to(content, {
-                    y: 0,
-                    borderColor: 'var(--border)',
-                    boxShadow: '0 0 0 rgba(200,169,110,0)',
-                    duration: 0.55, ease: 'power2.inOut'
-                  });
-              }
-
-              /* 3 — Pulse marker dot */
-              if (marker) {
-                gsap.timeline()
-                  .to(marker, {
-                    scale: 1.35,
-                    borderColor: 'var(--accent)',
-                    duration: 0.28, ease: 'power2.out',
-                    transformOrigin: '50% 50%'
-                  })
-                  .to(marker, {
-                    scale: 1,
-                    borderColor: 'var(--border)',
-                    duration: 0.7, ease: 'elastic.out(1, 0.45)'
-                  });
-              }
-            }
+            duration: 0.85, ease: 'expo.out'
           });
         }
       });
