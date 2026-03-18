@@ -1,0 +1,62 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options",  "value": "nosniff" },
+        { "key": "X-Frame-Options",          "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection",         "value": "1; mode=block" },
+        { "key": "Referrer-Policy",          "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy",       "value": "camera=(), microphone=(), geolocation=()" },
+        { "key": "Strict-Transport-Security","value": "max-age=63072000; includeSubDomains; preload" }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*\.png|.*\.jpg|.*\.jpeg|.*\.webp|.*\.gif|.*\.svg|.*\.ico)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Cache-Control",  "value": "public, max-age=86400" },
+        { "key": "Content-Type",   "value": "application/xml; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    }
+  ],
+
+  "redirects": [
+    { "source": "/home",          "destination": "/",               "permanent": true },
+    { "source": "/about",         "destination": "/about/",         "permanent": true },
+    { "source": "/experience",    "destination": "/experience/",    "permanent": true },
+    { "source": "/research",      "destination": "/research/",      "permanent": true },
+    { "source": "/rapture-twelve","destination": "/rapture-twelve/","permanent": true },
+    { "source": "/zharnyx",       "destination": "/zharnyx/",       "permanent": true },
+    { "source": "/achievements",  "destination": "/achievements/",  "permanent": true },
+    { "source": "/projects",      "destination": "/projects/",      "permanent": true },
+    { "source": "/skills",        "destination": "/skills/",        "permanent": true },
+    { "source": "/contact",       "destination": "/contact/",       "permanent": true }
+  ]
+}
