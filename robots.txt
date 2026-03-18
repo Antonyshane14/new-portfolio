@@ -72,4 +72,4 @@ Disallow: /css/
 Disallow: /js/
 
 # ── Sitemap location ──────────────────────────────────
-Sitemap: https://antonyshane.com/sitemap.xml
+Sitemap: https://www.antonyshane.com/sitemap.xml

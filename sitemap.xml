@@ -5,17 +5,17 @@
 
   <!-- HOME -->
   <url>
-    <loc>https://antonyshane.com/</loc>
+    <loc>https://www.antonyshane.com/</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://antonyshane.com/profile.png</image:loc>
+      <image:loc>https://www.antonyshane.com/profile.png</image:loc>
       <image:title>Antony Shane — Cybersecurity Entrepreneur &amp; Researcher</image:title>
       <image:caption>Antony Shane, Founder of Rapture Twelve Pvt Ltd and Undergraduate Research Associate at NIT Rourkela</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://antonyshane.com/hackathon-2025.jpg</image:loc>
+      <image:loc>https://www.antonyshane.com/hackathon-2025.jpg</image:loc>
       <image:title>PSB Inter-NIT National Cybersecurity Hackathon 2025 — Grand Finale Award Ceremony</image:title>
       <image:caption>Antony Shane receiving award at PSB Hackathon Series 2025, MANIT Bhopal</image:caption>
     </image:image>
@@ -23,7 +23,7 @@
 
   <!-- MY JOURNEY -->
   <url>
-    <loc>https://antonyshane.com/about/</loc>
+    <loc>https://www.antonyshane.com/about/</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
@@ -31,7 +31,7 @@
 
   <!-- RESEARCH -->
   <url>
-    <loc>https://antonyshane.com/research/</loc>
+    <loc>https://www.antonyshane.com/research/</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.92</priority>
@@ -39,7 +39,7 @@
 
   <!-- RAPTURE TWELVE -->
   <url>
-    <loc>https://antonyshane.com/rapture-twelve/</loc>
+    <loc>https://www.antonyshane.com/rapture-twelve/</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
@@ -47,7 +47,7 @@
 
   <!-- ZHARNYX -->
   <url>
-    <loc>https://antonyshane.com/zharnyx/</loc>
+    <loc>https://www.antonyshane.com/zharnyx/</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
@@ -55,7 +55,7 @@
 
   <!-- EXPERIENCE -->
   <url>
-    <loc>https://antonyshane.com/experience/</loc>
+    <loc>https://www.antonyshane.com/experience/</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -63,7 +63,7 @@
 
   <!-- ACHIEVEMENTS -->
   <url>
-    <loc>https://antonyshane.com/achievements/</loc>
+    <loc>https://www.antonyshane.com/achievements/</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
@@ -71,7 +71,7 @@
 
   <!-- PROJECTS -->
   <url>
-    <loc>https://antonyshane.com/projects/</loc>
+    <loc>https://www.antonyshane.com/projects/</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -79,7 +79,7 @@
 
   <!-- SKILLS -->
   <url>
-    <loc>https://antonyshane.com/skills/</loc>
+    <loc>https://www.antonyshane.com/skills/</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
@@ -87,7 +87,7 @@
 
   <!-- CONTACT -->
   <url>
-    <loc>https://antonyshane.com/contact/</loc>
+    <loc>https://www.antonyshane.com/contact/</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.75</priority>
