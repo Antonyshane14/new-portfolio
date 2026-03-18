@@ -641,42 +641,21 @@ section { padding: 7rem 0; }
 }
 
 /* ──────────────────────────────────────────────────────────
-   MARQUEE BAND
+   SUB-PAGE: button alignment + subtle background
 ────────────────────────────────────────────────────────── */
-.marquee-band {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: var(--bg-3);
-  padding: 0.9rem 0;
-  overflow: hidden;
+
+/* Left-align CTA buttons on sub-pages */
+.page-hero .hero-cta-row {
+  justify-content: flex-start;
 }
 
-.marquee-track {
-  display: flex;
-  gap: 2.5rem;
-  width: max-content;
-  animation: marqueeRoll 28s linear infinite;
-}
-
-.m-item {
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.m-item em {
-  font-style: normal;
-  color: var(--accent);
-}
-
-@keyframes marqueeRoll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+/* Subtle minimalistic background for all sub-pages */
+body:has(.page-hero) {
+  background-image:
+    radial-gradient(ellipse 70% 45% at 92% 8%,  rgba(200,169,110,0.055) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 40% at 6%  90%, rgba(200,169,110,0.035) 0%, transparent 58%),
+    radial-gradient(circle 1px at center,        rgba(200,169,110,0.09) 0%, transparent 1px);
+  background-size: auto, auto, 44px 44px;
 }
 
 /* ──────────────────────────────────────────────────────────
