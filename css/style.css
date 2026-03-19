@@ -1075,7 +1075,7 @@ body:has(.page-hero)::after {
 .exp-item:hover::before { transform: scaleY(1); }
 
 .exp-date {
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
@@ -1084,20 +1084,20 @@ body:has(.page-hero)::after {
 
 .exp-company {
   font-family: var(--fd);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   margin-bottom: 0.2rem;
 }
 
 .exp-location {
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   color: var(--text-dim);
 }
 
 .exp-badge {
   display: inline-block;
   margin-top: 0.75rem;
-  padding: 0.18rem 0.55rem;
-  font-size: 0.58rem;
+  padding: 0.22rem 0.6rem;
+  font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border: 1px solid var(--accent-line);
@@ -1121,7 +1121,7 @@ body:has(.page-hero)::after {
 }
 
 .exp-bullets li {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   color: var(--text-dim);
   padding-left: 1.25rem;
   position: relative;
@@ -1133,7 +1133,7 @@ body:has(.page-hero)::after {
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   top: 0.05em;
 }
 
