@@ -1547,7 +1547,7 @@ body:has(.page-hero)::after {
 }
 
 .ach-icon {
-  font-size: 1rem;
+  font-size: 1.2rem;
   flex-shrink: 0;
   margin-top: 0.05em;
   line-height: 1;
@@ -1555,21 +1555,21 @@ body:has(.page-hero)::after {
 
 .ach-name {
   font-family: var(--fd);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 400;
   line-height: 1.4;
   margin-bottom: 0.3rem;
 }
 
 .ach-sub {
-  font-size: 0.68rem;
+  font-size: 0.82rem;
   color: var(--text-dim);
   margin-bottom: 0.5rem;
 }
 
 .badge {
   display: inline-block;
-  font-size: 0.57rem;
+  font-size: 0.68rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0.16rem 0.5rem;
