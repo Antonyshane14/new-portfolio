@@ -1269,6 +1269,11 @@ body:has(.page-hero)::after {
   margin-top: auto;
 }
 
+.proj-link:visited,
+.proj-link:active {
+  color: var(--accent);
+}
+
 .proj-link::after {
   content: '';
   position: absolute;

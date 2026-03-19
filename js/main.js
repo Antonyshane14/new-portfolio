@@ -243,13 +243,11 @@ function init() {
   ───────────────────────────────────────────────────── */
   const wordEl = $('#word-swap');
   const words  = [
-    'advance security research.',
-    'scale cybersecurity ventures.',
-    'secure critical systems.',
-    'lead offensive engagements.',
-    'build workforce-ready talent.',
-    'publish impactful research.',
-    'defend with attacker insight.',
+    'Deliver full spectrum cybersecurity services',
+    'Drive cutting edge security research',
+    'Engineer AI-powered autonomous security systems',
+    'Train next generation cyber operators',
+    'Investigate, respond and mitigate threats',
   ];
 
   if (wordEl) {
