@@ -62,52 +62,126 @@
   <link rel="stylesheet" href="../css/style.css" />
 
   <style>
-    .page-hero {
-      min-height: 55vh;
+    .contact-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7rem 6rem 5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    .cp-label {
+      font-family: var(--fm);
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
       display: flex;
       align-items: center;
-      padding: 8rem 0 5rem;
-      position: relative;
-      overflow: hidden;
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
-    .page-hero::after {
+    .cp-label::before {
       content: '';
-      position: absolute;
-      bottom: -80px; left: 50%;
-      transform: translateX(-50%);
-      width: 700px; height: 500px;
-      background: radial-gradient(ellipse, rgba(200,169,110,0.05) 0%, transparent 65%);
-      pointer-events: none;
+      width: 2rem; height: 1px;
+      background: var(--accent);
+      opacity: 0.6;
     }
-    .page-hero-inner { max-width: 1160px; margin: 0 auto; padding: 0 3rem; width: 100%; }
-    .page-hero-name {
+    .cp-heading {
       font-family: var(--fd);
-      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-size: clamp(4rem, 9vw, 8rem);
       font-weight: 400;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.75rem;
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      margin-bottom: 3rem;
     }
-    .page-hero-sub {
-      font-size: 0.88rem;
+    .cp-heading em { font-style: italic; color: var(--accent); }
+    .cp-sub {
+      font-size: 1.05rem;
       color: var(--text-dim);
-      max-width: 560px;
-      line-height: 1.9;
-      margin-bottom: 2.25rem;
+      line-height: 1.85;
+      max-width: 700px;
+      margin-bottom: 2rem;
     }
-    .breadcrumb {
-      font-size: 0.95rem;
+    /* Contact rows */
+    .cp-rows {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(200,169,110,0.12);
+    }
+    .cp-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 2rem 2rem 2rem 0;
+      border-bottom: 1px solid rgba(200,169,110,0.12);
+      border-right: 1px solid rgba(200,169,110,0.08);
+      text-decoration: none;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .cp-row:last-child { border-right: none; }
+    .cp-row:hover { background: rgba(200,169,110,0.03); }
+    .cp-row-arrow {
+      position: absolute;
+      top: 2rem; right: 1.5rem;
+      color: var(--accent);
+      font-size: 1rem;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .cp-row:hover .cp-row-arrow { opacity: 1; transform: translate(3px,-3px); }
+    .cp-row-label {
+      font-family: var(--fm);
+      font-size: 0.62rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--text-dim);
-      margin-bottom: 2.5rem;
-      display: flex;
-      gap: 0.6rem;
-      align-items: center;
+      color: var(--accent);
     }
-    .breadcrumb a { color: var(--accent); transition: opacity 0.2s; }
-    .breadcrumb a:hover { opacity: 0.75; }
-    .breadcrumb span { opacity: 0.4; }
+    .cp-row-val {
+      font-family: var(--fd);
+      font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+    /* Social + bottom row */
+    .cp-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .cp-socials {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .cp-social-btn {
+      font-family: var(--fm);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border: 1px solid rgba(200,169,110,0.18);
+      padding: 0.5rem 1.1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .cp-social-btn:hover { color: var(--accent); border-color: rgba(200,169,110,0.5); }
+    .cp-note {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      opacity: 0.5;
+    }
   </style>
 </head>
 
@@ -144,94 +218,47 @@
   </nav>
 
   <main>
-    <header class="page-hero" aria-label="Contact Antony Shane">
-      <div class="page-hero-inner">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../">Antony Shane</a>
-          <span aria-hidden="true">/</span>
-          <span aria-current="page">Contact</span>
-        </nav>
-        <h1 class="page-hero-name">
-          <span class="line-wrap"><span class="inner">Let's build</span></span>
-          <span class="line-wrap"><span class="inner"><em>something real.</em></span></span>
-        </h1>
-        <p class="page-hero-sub">
-          Open to client engagements through Rapture Twelve, research collaborations,
-          and technical partnerships. If you'd like to connect or explore ideas, feel free to reach out.
-        </p>
+    <div class="contact-page">
+
+      <p class="cp-label">Contact</p>
+
+      <h1 class="cp-heading">
+        Let's build<br><em>something real.</em>
+      </h1>
+
+      <p class="cp-sub">
+        Open to client engagements through Rapture Twelve, research collaborations,
+        and technical partnerships. Feel free to reach out.
+      </p>
+
+      <div class="cp-rows" style="grid-template-columns: repeat(2, 1fr);">
+        <a href="mailto:antonyshane@rapturetwelve.com" class="cp-row" style="padding-left: 2rem;">
+          <span class="cp-row-label">Email</span>
+          <span class="cp-row-val">antonyshane@rapturetwelve.com</span>
+          <span class="cp-row-arrow">↗</span>
+        </a>
+        <a href="tel:+919790791723" class="cp-row" style="padding-left: 2rem;">
+          <span class="cp-row-label">Phone</span>
+          <span class="cp-row-val">+91 97907 91723</span>
+          <span class="cp-row-arrow">↗</span>
+        </a>
       </div>
-    </header>
 
-    <hr class="section-rule" />
-
-    <section id="contact" aria-labelledby="contact-heading">
-      <div class="container">
-        <div class="contact-inner">
-          <p class="section-label">Reach out</p>
-
-          <h2 id="contact-heading" class="contact-headline reveal-title" style="font-size:clamp(2rem,4vw,3rem); margin-bottom:1.5rem;">
-            <span class="line-wrap"><span class="inner">Direct channels.</span></span>
-          </h2>
-
-          <div class="contact-links">
-
-            <a href="mailto:antonyshane@rapturetwelve.com" class="c-link fade-in">
-              <div class="c-text">
-                <p class="c-label">Primary (Work)</p>
-                <p class="c-val">antonyshane@rapturetwelve.com</p>
-              </div>
-              <span class="c-arrow" aria-hidden="true">↗</span>
-              <span class="c-wipe" aria-hidden="true"></span>
-            </a>
-
-            <a href="mailto:antonymichealpeoshane@gmail.com" class="c-link fade-in">
-              <div class="c-text">
-                <p class="c-label">Personal</p>
-                <p class="c-val">antonymichealpeoshane@gmail.com</p>
-              </div>
-              <span class="c-arrow" aria-hidden="true">↗</span>
-              <span class="c-wipe" aria-hidden="true"></span>
-            </a>
-
-            <a href="tel:+919790791723" class="c-link fade-in">
-              <div class="c-text">
-                <p class="c-label">Phone</p>
-                <p class="c-val">+91 97907 91723</p>
-              </div>
-              <span class="c-arrow" aria-hidden="true">↗</span>
-              <span class="c-wipe" aria-hidden="true"></span>
-            </a>
-
-            <a href="https://antonyshane.com" target="_blank" rel="noopener" class="c-link fade-in">
-              <div class="c-text">
-                <p class="c-label">Website</p>
-                <p class="c-val">antonyshane.com</p>
-              </div>
-              <span class="c-arrow" aria-hidden="true">↗</span>
-              <span class="c-wipe" aria-hidden="true"></span>
-            </a>
-
-          </div>
-
-          <div class="social-row fade-in">
-            <a href="https://linkedin.com/in/antonyshane" target="_blank" rel="noopener" class="social-btn">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              LinkedIn
-            </a>
-            <a href="https://github.com/Antonyshane14" target="_blank" rel="noopener" class="social-btn">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              GitHub
-            </a>
-            <a href="https://antonyshane.com" target="_blank" rel="noopener" class="social-btn">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              antonyshane.com
-            </a>
-          </div>
-
+      <div class="cp-bottom">
+        <div class="cp-socials">
+          <a href="https://linkedin.com/in/antonyshane" target="_blank" rel="noopener" class="cp-social-btn">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/Antonyshane14" target="_blank" rel="noopener" class="cp-social-btn">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
         </div>
+        <p class="cp-note">Rourkela, Odisha, India</p>
       </div>
-    </section>
 
+    </div>
   </main>
 
   <footer role="contentinfo">
