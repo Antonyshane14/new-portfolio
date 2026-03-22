@@ -197,9 +197,9 @@ section { padding: 7rem 0; }
 
 .section-header {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: space-between;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.5rem;
   flex-wrap: wrap;
   gap: 1.5rem;
 }
@@ -209,8 +209,8 @@ section { padding: 7rem 0; }
   color: var(--text-dim);
   line-height: 1.9;
   text-align: right;
-  padding-top: 1.5rem;
   white-space: nowrap;
+  align-self: flex-start;
 }
 
 /* ──────────────────────────────────────────────────────────

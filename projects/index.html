@@ -16,11 +16,15 @@
   <meta property="og:description" content="Personal cybersecurity and AI projects: AI-powered pentesting, vulnerability detection, threat intelligence, and security monitoring." />
   <meta property="og:url"         content="https://www.antonyshane.com/projects/" />
   <meta property="og:site_name"   content="Antony Shane" />
+  <meta property="og:image"       content="https://www.antonyshane.com/hackathon-2025.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Projects | Antony Shane" />
   <meta name="twitter:description" content="Personal cybersecurity & AI projects: AI pentesting, vulnerability detection, threat intelligence, security monitoring" />
+  <meta name="twitter:image"       content="https://www.antonyshane.com/hackathon-2025.jpg" />
 
   <!-- JSON-LD: ItemList of projects -->
   <script type="application/ld+json">
@@ -108,47 +112,104 @@
 
   <style>
     .page-hero {
-      min-height: 55vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 8rem 0 5rem;
+      padding: 8rem 0 6rem;
       position: relative;
       overflow: hidden;
     }
     .page-hero::after {
       content: '';
       position: absolute;
-      top: 30%; right: 8%;
-      width: 520px; height: 520px;
-      background: radial-gradient(circle, rgba(200,169,110,0.06) 0%, transparent 65%);
+      top: 20%; right: 5%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 60%);
       pointer-events: none;
     }
-    .page-hero-inner { max-width: 1160px; margin: 0 auto; padding: 0 3rem; width: 100%; }
+    .page-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
     .page-hero-name {
       font-family: var(--fd);
-      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-size: clamp(4rem, 9vw, 7.5rem);
       font-weight: 400;
-      line-height: 1.1;
+      line-height: 1.05;
       letter-spacing: -0.03em;
-      margin-bottom: 1.75rem;
+      margin-bottom: 2.5rem;
       overflow: visible;
     }
     .page-hero-name .line-wrap {
       overflow: visible;
     }
     .page-hero-sub {
-      font-size: 0.88rem;
+      font-size: 1.15rem;
       color: var(--text-dim);
-      max-width: 560px;
-      line-height: 1.9;
-      margin-bottom: 2.25rem;
+      max-width: 860px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+      text-align: justify;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .hero-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(200,169,110,0.3);
+      padding: 0.45rem 1.1rem;
+      border-radius: 2px;
+      background: rgba(200,169,110,0.04);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .hero-tag:hover {
+      background: rgba(200,169,110,0.1);
+      border-color: rgba(200,169,110,0.6);
+    }
+    .scroll-cue {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-dim);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    .scroll-cue svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); }
+      50% { opacity: 0.7; transform: translateX(-50%) translateY(6px); }
     }
     .breadcrumb {
-      font-size: 0.95rem;
-      letter-spacing: 0.18em;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--text-dim);
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
       display: flex;
       gap: 0.6rem;
       align-items: center;
@@ -201,12 +262,25 @@
         </nav>
         <h1 class="page-hero-name">
           <span class="line-wrap"><span class="inner">Personal</span></span>
-          <span class="line-wrap"><span class="inner">projects.</span></span>
+          <span class="line-wrap"><span class="inner" style="color:var(--accent)">projects.</span></span>
         </h1>
         <p class="page-hero-sub">
-          A selection of personal projects in cybersecurity, AI-powered security tooling,
-          threat intelligence, and full-stack development.
+          A collection of things I've built, spanning quick experiments, hackathon sprints,
+          and more deliberate systems. Each project reflects a different idea explored,
+          problem tackled, or boundary pushed, brought to life through constant iteration
+          and hands-on building.
         </p>
+        <div class="hero-tags">
+          <span class="hero-tag">Cybersecurity</span>
+          <span class="hero-tag">AI / ML</span>
+          <span class="hero-tag">Full-Stack</span>
+          <span class="hero-tag">Hackathon Builds</span>
+          <span class="hero-tag">Automation</span>
+        </div>
+      </div>
+      <div class="scroll-cue">
+        <span>Scroll</span>
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </div>
     </header>
 
@@ -220,11 +294,8 @@
             <p class="section-label">Personal</p>
             <h2 id="personal-proj-heading" class="section-title reveal-title">
               <span class="line-wrap"><span class="inner">Built from</span></span>
-              <span class="line-wrap"><span class="inner">scratch.</span></span>
+              <span class="line-wrap"><span class="inner" style="color:var(--accent)">scratch.</span></span>
             </h2>
-          </div>
-          <div class="section-aside">
-            Cybersecurity · AI/ML · Full-Stack Development
           </div>
         </header>
 
