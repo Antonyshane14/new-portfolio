@@ -1893,9 +1893,9 @@ footer[role="contentinfo"] span {
    RESPONSIVE — 768px (mobile)
 ────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  #nav { padding: 1rem 1.5rem; }
+  #nav { padding: 1rem 1.5rem; justify-content: space-between; }
   .nav-links, .nav-cta { display: none; }
-  .nav-burger { display: flex; }
+  .nav-burger { display: flex; margin-left: auto; }
 
   .hero-inner {
     padding: 6rem 1.5rem 3rem;
@@ -1970,8 +1970,12 @@ footer[role="contentinfo"] span {
   /* Section rules */
   .section-rule { margin: 0 1.5rem; }
 
-  /* About text — no justify on mobile */
-  .about-p { text-align: left; }
+  /* Remove justified text on mobile — use left align */
+  .about-p,
+  .timeline-desc,
+  .proj-desc,
+  .page-hero-sub,
+  .about-full-body .about-p { text-align: left; }
 
   /* Timeline mobile styles */
   .timeline::before {
