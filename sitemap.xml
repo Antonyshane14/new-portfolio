@@ -6,18 +6,20 @@
   <!-- HOME -->
   <url>
     <loc>https://www.antonyshane.com/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.antonyshane.com/profile.png</image:loc>
-      <image:title>Antony Shane — Cybersecurity Entrepreneur &amp; Researcher</image:title>
-      <image:caption>Antony Shane, Founder of Rapture Twelve Pvt Ltd and Undergraduate Research Associate at NIT Rourkela</image:caption>
+      <image:title>Antony Shane — Cybersecurity Entrepreneur, Founder of Rapture Twelve Pvt Ltd</image:title>
+      <image:caption>Antony Shane, cybersecurity entrepreneur, offensive security researcher, Founder and CEO of Rapture Twelve Pvt Ltd, Undergraduate Research Associate at NIT Rourkela, India</image:caption>
+      <image:geo_location>India</image:geo_location>
     </image:image>
     <image:image>
       <image:loc>https://www.antonyshane.com/hackathon-2025.jpg</image:loc>
-      <image:title>PSB Inter-NIT National Cybersecurity Hackathon 2025 — Grand Finale Award Ceremony</image:title>
-      <image:caption>Antony Shane receiving award at PSB Hackathon Series 2025, MANIT Bhopal</image:caption>
+      <image:title>Antony Shane at PSB Inter-NIT National Cybersecurity Hackathon 2025 Grand Finale, MANIT Bhopal</image:title>
+      <image:caption>Antony Shane at the PSB Hackathon Series 2025 Grand Finale and Award Ceremony, a national inter-NIT cybersecurity competition held at MANIT Bhopal, India</image:caption>
+      <image:geo_location>Bhopal, India</image:geo_location>
     </image:image>
   </url>
 
