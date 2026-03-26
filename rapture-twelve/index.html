@@ -60,6 +60,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <link rel="stylesheet" href="../css/style.css" />
 
   <style>
@@ -715,6 +717,30 @@
     }
     .r12-visit-btn:hover { background: rgba(200,169,110,0.1); border-color: var(--r12-gold); }
 
+    /* ── GSAP initial states (hidden until animated) ── */
+    .r12-breadcrumb,
+    .r12-company-name,
+    .r12-company-sub,
+    .r12-tagline,
+    .r12-subtitle,
+    .r12-hero-cta { opacity: 0; }
+
+    .r12-tg-word, .r12-tg-dot {
+      display: inline-block;
+      opacity: 0;
+    }
+
+    .r12-section-title,
+    .r12-section-sub { opacity: 0; }
+
+    .r12-diff-card { opacity: 0; }
+    .r12-pt-row { opacity: 0; }
+    .r12-product-card { opacity: 0; }
+    .r12-leader-card { opacity: 0; }
+    .r12-contact-block { opacity: 0; }
+    .r12-form-wrap { opacity: 0; }
+    .r12-footer { opacity: 0; }
+
     /* ── SCROLL HINT (hero) ── */
     .r12-hero .scroll-hint {
       color: var(--r12-gold);
@@ -805,7 +831,13 @@
       </div>
       <h1 class="r12-company-name">Rapture Twelve</h1>
       <p class="r12-company-sub">Pvt Ltd.</p>
-      <p class="r12-tagline">Infiltrate &nbsp;•&nbsp; Exploit &nbsp;•&nbsp; Secure</p>
+      <p class="r12-tagline">
+        <span class="r12-tg-word">Infiltrate</span>
+        <span class="r12-tg-dot">&nbsp;•&nbsp;</span>
+        <span class="r12-tg-word">Exploit</span>
+        <span class="r12-tg-dot">&nbsp;•&nbsp;</span>
+        <span class="r12-tg-word">Secure</span>
+      </p>
       <p class="r12-subtitle">AI-driven cybersecurity leveraging offensive and defensive expertise to anticipate and outsmart evolving threats. DPIIT-certified, globally operational.</p>
       <div class="r12-hero-cta">
         <a href="#contact" class="r12-btn-primary">Contact Us ↗</a>

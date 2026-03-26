@@ -406,4 +406,188 @@ function initPage() {
     );
   });
 
+  /* ══════════════════════════════════════
+     RAPTURE TWELVE — HERO CINEMATIC REVEAL
+  ══════════════════════════════════════ */
+  const r12Hero = $('.r12-hero');
+  if (r12Hero) {
+    const r12tl = gsap.timeline({ delay: 0.15 });
+
+    // Breadcrumb slides from left
+    r12tl.fromTo('.r12-breadcrumb',
+      { opacity: 0, x: -30 },
+      { opacity: 1, x: 0, duration: 0.7, ease: 'power3.out' }
+    );
+
+    // Company name clips up
+    r12tl.fromTo('.r12-company-name',
+      { opacity: 0, y: 60, skewY: 3 },
+      { opacity: 1, y: 0, skewY: 0, duration: 1, ease: 'expo.out' },
+      '-=0.3'
+    );
+
+    // "Pvt Ltd." italic sweeps in
+    r12tl.fromTo('.r12-company-sub',
+      { opacity: 0, y: 50, skewY: 3 },
+      { opacity: 1, y: 0, skewY: 0, duration: 1, ease: 'expo.out' },
+      '-=0.75'
+    );
+
+    // Tagline — words slam in one by one, dots fade between
+    r12tl.to('.r12-tagline', { opacity: 0.8, duration: 0.01 }, '-=0.3');
+    r12tl.fromTo('.r12-tg-word',
+      { opacity: 0, y: -20, scale: 1.3, filter: 'blur(6px)' },
+      { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 0.5, ease: 'back.out(1.7)', stagger: 0.2 },
+      '-=0.25'
+    );
+    r12tl.fromTo('.r12-tg-dot',
+      { opacity: 0, scale: 0 },
+      { opacity: 1, scale: 1, duration: 0.3, ease: 'back.out(3)', stagger: 0.15 },
+      '-=0.45'
+    );
+
+    // Subtitle slides up
+    r12tl.fromTo('.r12-subtitle',
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+      '-=0.4'
+    );
+
+    // CTA buttons pop in
+    r12tl.fromTo('.r12-hero-cta',
+      { opacity: 0, y: 18 },
+      { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' },
+      '-=0.3'
+    );
+
+    // Parallax on scroll
+    gsap.to('.r12-hero-inner', {
+      y: 80,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.r12-hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1.5
+      }
+    });
+  }
+
+  /* ══════════════════════════════════════
+     RAPTURE TWELVE — SECTION HEADERS
+  ══════════════════════════════════════ */
+  $$('.r12-section-title').forEach(title => {
+    gsap.fromTo(title,
+      { opacity: 0, y: 40, scale: 0.92 },
+      {
+        opacity: 1, y: 0, scale: 1, duration: 0.9, ease: 'expo.out',
+        scrollTrigger: { trigger: title, start: 'top 87%', toggleActions: 'play none none none' }
+      }
+    );
+  });
+
+  $$('.r12-section-sub').forEach(sub => {
+    gsap.fromTo(sub,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1, y: 0, duration: 0.75, ease: 'power3.out', delay: 0.15,
+        scrollTrigger: { trigger: sub, start: 'top 89%', toggleActions: 'play none none none' }
+      }
+    );
+  });
+
+  /* ══════════════════════════════════════
+     RAPTURE TWELVE — DIFF CARDS
+     alternating slide from left / right
+  ══════════════════════════════════════ */
+  $$('.r12-diff-card').forEach((card, i) => {
+    gsap.fromTo(card,
+      { opacity: 0, x: i % 2 === 0 ? -40 : 40, rotateY: i % 2 === 0 ? 6 : -6 },
+      {
+        opacity: 1, x: 0, rotateY: 0, duration: 0.85, ease: 'expo.out', delay: i * 0.08,
+        scrollTrigger: { trigger: card, start: 'top 88%', toggleActions: 'play none none none' }
+      }
+    );
+  });
+
+  /* ══════════════════════════════════════
+     RAPTURE TWELVE — PROJECT ROWS
+     slide in from left with stagger
+  ══════════════════════════════════════ */
+  $$('.r12-pt-row').forEach((row, i) => {
+    gsap.fromTo(row,
+      { opacity: 0, x: -35, borderLeftColor: 'rgba(200,169,110,0)' },
+      {
+        opacity: 1, x: 0, duration: 0.7, ease: 'power3.out', delay: i * 0.1,
+        scrollTrigger: { trigger: row, start: 'top 88%', toggleActions: 'play none none none' }
+      }
+    );
+  });
+
+  /* ══════════════════════════════════════
+     RAPTURE TWELVE — PRODUCT CARDS
+     scale + rotate entrance
+  ══════════════════════════════════════ */
+  $$('.r12-product-card').forEach((card, i) => {
+    gsap.fromTo(card,
+      { opacity: 0, y: 50, scale: 0.9, rotateX: 8 },
+      {
+        opacity: 1, y: 0, scale: 1, rotateX: 0, duration: 0.95, ease: 'expo.out', delay: i * 0.15,
+        scrollTrigger: { trigger: card, start: 'top 87%', toggleActions: 'play none none none' }
+      }
+    );
+  });
+
+  /* ══════════════════════════════════════
+     RAPTURE TWELVE — LEADER CARDS
+     bouncy scale entrance
+  ══════════════════════════════════════ */
+  $$('.r12-leader-card').forEach((card, i) => {
+    gsap.fromTo(card,
+      { opacity: 0, y: 40, scale: 0.88, rotateY: 12 },
+      {
+        opacity: 1, y: 0, scale: 1, rotateY: 0, duration: 1, ease: 'back.out(1.4)', delay: i * 0.18,
+        scrollTrigger: { trigger: card, start: 'top 87%', toggleActions: 'play none none none' }
+      }
+    );
+  });
+
+  /* ══════════════════════════════════════
+     RAPTURE TWELVE — CONTACT SECTION
+  ══════════════════════════════════════ */
+  $$('.r12-contact-block').forEach((block, i) => {
+    gsap.fromTo(block,
+      { opacity: 0, x: -30 },
+      {
+        opacity: 1, x: 0, duration: 0.7, ease: 'power3.out', delay: i * 0.12,
+        scrollTrigger: { trigger: block, start: 'top 88%', toggleActions: 'play none none none' }
+      }
+    );
+  });
+
+  const r12Form = $('.r12-form-wrap');
+  if (r12Form) {
+    gsap.fromTo(r12Form,
+      { opacity: 0, y: 40, scale: 0.96 },
+      {
+        opacity: 1, y: 0, scale: 1, duration: 0.9, ease: 'expo.out',
+        scrollTrigger: { trigger: r12Form, start: 'top 85%', toggleActions: 'play none none none' }
+      }
+    );
+  }
+
+  /* ══════════════════════════════════════
+     RAPTURE TWELVE — FOOTER REVEAL
+  ══════════════════════════════════════ */
+  const r12Footer = $('.r12-footer');
+  if (r12Footer) {
+    gsap.fromTo(r12Footer,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
+        scrollTrigger: { trigger: r12Footer, start: 'top 95%', toggleActions: 'play none none none' }
+      }
+    );
+  }
+
 }

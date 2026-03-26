@@ -539,10 +539,14 @@
       .manifesto-capabilities {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
         gap: 0.6rem;
         margin-top: 0.5rem;
       }
       .manifesto-cap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         font-family: var(--fm);
         font-size: 0.65rem;
@@ -550,7 +554,7 @@
         text-transform: uppercase;
         color: var(--text-dim);
         border: 1px solid rgba(200,169,110,0.2);
-        padding: 0.35rem 0.85rem;
+        padding: 0.55rem 0.85rem;
         background: rgba(200,169,110,0.04);
         transition: color 0.2s, border-color 0.2s;
       }
