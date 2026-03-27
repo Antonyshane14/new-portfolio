@@ -106,6 +106,7 @@
       margin: 0 auto;
       padding: 9rem 3rem 6rem;
       width: 100%;
+      will-change: transform;
     }
     .r12-breadcrumb {
       font-size: 0.78rem;
@@ -1155,7 +1156,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js"></script>
   <script>
-    VANTA.FOG({
+    const vantaEffect = VANTA.FOG({
       el: '#vanta-bg',
       mouseControls: false,
       touchControls: false,
@@ -1165,9 +1166,25 @@
       lowlightColor: 0x080808,
       baseColor: 0x080808,
       blurFactor: 0.92,
-      speed: 2.00,
+      speed: 1.20,
       zoom: 0.80
     });
+
+    // Pause Vanta once user scrolls past the hero to free up GPU
+    const heroEl = document.querySelector('.r12-hero');
+    if (heroEl && vantaEffect) {
+      let vantaPaused = false;
+      const heroBottom = heroEl.offsetTop + heroEl.offsetHeight;
+      window.addEventListener('scroll', function() {
+        if (!vantaPaused && window.scrollY > heroBottom) {
+          vantaEffect.renderer.setAnimationLoop(null);
+          vantaPaused = true;
+        } else if (vantaPaused && window.scrollY <= heroBottom) {
+          vantaEffect.renderer.setAnimationLoop(vantaEffect.onUpdate.bind(vantaEffect));
+          vantaPaused = false;
+        }
+      }, { passive: true });
+    }
 
     // Simple form handler
     document.getElementById('r12-contact-form').addEventListener('submit', function(e) {

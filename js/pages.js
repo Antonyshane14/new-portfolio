@@ -468,7 +468,7 @@ function initPage() {
         trigger: '.r12-hero',
         start: 'top top',
         end: 'bottom top',
-        scrub: 1.5
+        scrub: true
       }
     });
   }
