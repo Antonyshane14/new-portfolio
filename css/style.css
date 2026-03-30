@@ -704,13 +704,16 @@ body {
   justify-content: flex-start;
 }
 
-/* Vanta.js fog canvas container */
+/* Static gradient background (replaces Vanta fog — no WebGL overhead) */
 #vanta-bg {
   position: fixed;
   inset: 0;
   z-index: -2;
   pointer-events: none;
-  opacity: 0.23;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(168,138,82,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 70%, rgba(30,24,16,0.5) 0%, transparent 70%),
+    #080808;
 }
 
 /* Subtle golden grid overlay on top of the fog */

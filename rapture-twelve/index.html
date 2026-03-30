@@ -1153,39 +1153,7 @@
   </footer>
 
   <script src="../js/pages.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js"></script>
   <script>
-    const vantaEffect = VANTA.FOG({
-      el: '#vanta-bg',
-      mouseControls: false,
-      touchControls: false,
-      gyroControls: false,
-      highlightColor: 0xa88a52,
-      midtoneColor: 0x1e1810,
-      lowlightColor: 0x080808,
-      baseColor: 0x080808,
-      blurFactor: 0.92,
-      speed: 1.20,
-      zoom: 0.80
-    });
-
-    // Pause Vanta once user scrolls past the hero to free up GPU
-    const heroEl = document.querySelector('.r12-hero');
-    if (heroEl && vantaEffect) {
-      let vantaPaused = false;
-      const heroBottom = heroEl.offsetTop + heroEl.offsetHeight;
-      window.addEventListener('scroll', function() {
-        if (!vantaPaused && window.scrollY > heroBottom) {
-          vantaEffect.renderer.setAnimationLoop(null);
-          vantaPaused = true;
-        } else if (vantaPaused && window.scrollY <= heroBottom) {
-          vantaEffect.renderer.setAnimationLoop(vantaEffect.onUpdate.bind(vantaEffect));
-          vantaPaused = false;
-        }
-      }, { passive: true });
-    }
-
     // Simple form handler
     document.getElementById('r12-contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
