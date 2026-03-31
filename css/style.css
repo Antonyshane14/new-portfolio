@@ -1247,7 +1247,7 @@ body:has(.page-hero)::after {
 }
 
 .exp-bullets li {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--text-dim);
   padding-left: 1.25rem;
   position: relative;
